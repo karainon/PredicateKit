@@ -12,14 +12,14 @@ extension Bool: KRKeyType, KREqualable {}
 
 public struct Const<T: KRKeyType> {
     public var value: String
-    init(_ value: String) {
+    public init(_ value: String) {
         self.value = value
     }
 }
 
 public struct Key<T: KRKeyType> {
     public var path: String
-    init(_ path: String) {
+    public init(_ path: String) {
         self.path = path
     }
 }
@@ -109,4 +109,60 @@ public extension Key where T: KRComparable {
     
 }
 
+/// MARK: - NSPedicate
+
+public extension NSPredicate {
+    /// SwifterSwift: Returns a new predicate formed by AND-ing the argument to the predicate.
+    ///
+    /// - Parameters:
+    ///   - lhs: NSPredicate.
+    ///   - rhs: NSPredicate.
+    /// - Returns: NSCompoundPredicate
+    public static func && (lhs: NSPredicate, rhs: NSPredicate) -> NSPredicate {
+        return lhs.and(rhs)
+    }
+    
+    /// SwifterSwift: Returns a new predicate formed by OR-ing the argument to the predicate.
+    ///
+    /// - Parameters:
+    ///   - lhs: NSPredicate.
+    ///   - rhs: NSPredicate.
+    /// - Returns: NSCompoundPredicate
+    public static func || (lhs: NSPredicate, rhs: NSPredicate) -> NSPredicate {
+        return lhs.or(rhs)
+    }
+    
+    /// SwifterSwift: Returns a new predicate formed by NOT-ing the predicate.
+    /// - Parameters: rhs: NSPredicate to convert.
+    /// - Returns: NSCompoundPredicate
+    public static prefix func ! (rhs: NSPredicate) -> NSPredicate {
+        return rhs.not
+    }
+    
+}
+
+// MARK: - Properties
+fileprivate extension NSPredicate {
+    
+    /// SwifterSwift: Returns a new predicate formed by NOT-ing the predicate.
+    var not: NSCompoundPredicate {
+        return NSCompoundPredicate(notPredicateWithSubpredicate: self)
+    }
+    
+    /// SwifterSwift: Returns a new predicate formed by AND-ing the argument to the predicate.
+    ///
+    /// - Parameter predicate: NSPredicate
+    /// - Returns: NSCompoundPredicate
+    func and(_ predicate: NSPredicate) -> NSCompoundPredicate {
+        return NSCompoundPredicate(andPredicateWithSubpredicates: [self, predicate])
+    }
+    
+    /// SwifterSwift: Returns a new predicate formed by OR-ing the argument to the predicate.
+    ///
+    /// - Parameter predicate: NSPredicate
+    /// - Returns: NSCompoundPredicate
+    func or(_ predicate: NSPredicate) -> NSCompoundPredicate {
+        return NSCompoundPredicate(orPredicateWithSubpredicates: [self, predicate])
+    }
+}
 
