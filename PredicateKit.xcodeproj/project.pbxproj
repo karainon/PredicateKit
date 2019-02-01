@@ -24,6 +24,7 @@
 		3F910F9622032E450011B042 /* PredicateKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F910F8D22032E450011B042 /* PredicateKit.framework */; };
 		3F910F9B22032E450011B042 /* PredicateKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F910F9A22032E450011B042 /* PredicateKitTests.swift */; };
 		3F910F9D22032E450011B042 /* PredicateKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F910F8F22032E450011B042 /* PredicateKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FCB4792220454220074EBD9 /* PredicateKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FCB4791220454220074EBD9 /* PredicateKit.h */; };
 		OBJ_22 /* PredicateKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* PredicateKit.swift */; };
 		OBJ_29 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_40 /* PredicateKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* PredicateKitTests.swift */; };
@@ -62,6 +63,7 @@
 		3F910F9522032E450011B042 /* PredicateKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PredicateKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F910F9A22032E450011B042 /* PredicateKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredicateKitTests.swift; sourceTree = "<group>"; };
 		3F910F9C22032E450011B042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FCB4791220454220074EBD9 /* PredicateKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateKit.h; sourceTree = "<group>"; };
 		OBJ_12 /* PredicateKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredicateKitTests.swift; sourceTree = "<group>"; };
 		OBJ_13 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -151,7 +153,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -161,7 +163,6 @@
 				3F910F9922032E450011B042 /* PredicateKitTests */,
 				OBJ_14 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -175,6 +176,7 @@
 		OBJ_8 /* PredicateKit */ = {
 			isa = PBXGroup;
 			children = (
+				3FCB4791220454220074EBD9 /* PredicateKit.h */,
 				OBJ_9 /* PredicateKit.swift */,
 			);
 			name = PredicateKit;
@@ -188,6 +190,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FCB4792220454220074EBD9 /* PredicateKit.h in Headers */,
 				3F910F9D22032E450011B042 /* PredicateKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,7 +309,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
