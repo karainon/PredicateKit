@@ -2,7 +2,7 @@
 //  PredicateKit
 //  PredicateKit
 //
-//  Created by Karainon Hou on 2/3/17.
+//  Created by Yeseni Hou Hou on 2/3/17.
 //
 //
 
