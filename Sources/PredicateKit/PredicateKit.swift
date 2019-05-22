@@ -88,7 +88,7 @@ public func !=<T>(lhs: KRKey<T>, rhs: Optional<T>) -> NSPredicate where T: KREqu
 
 public extension KRKey where T: KRContainable {
     
-    public func contains(_ t: T) -> NSPredicate {
+    func contains(_ t: T) -> NSPredicate {
         return NSPredicate(format: "\(self.path) CONTAINS %@", argumentArray: [t])
     }
     
@@ -96,7 +96,7 @@ public extension KRKey where T: KRContainable {
 
 public extension KRKey where T: KRComparable {
     
-    public func between(_ lhs: T, _ hhs: T) -> NSPredicate {
+    func between(_ lhs: T, _ hhs: T) -> NSPredicate {
         return NSPredicate(format: "\(self.path) BETWEEN { %@, %@ }", argumentArray: [lhs, hhs])
     }
     
@@ -111,7 +111,7 @@ public extension NSPredicate {
     ///   - lhs: NSPredicate.
     ///   - rhs: NSPredicate.
     /// - Returns: NSCompoundPredicate
-    public static func && (lhs: NSPredicate, rhs: NSPredicate) -> NSPredicate {
+    static func && (lhs: NSPredicate, rhs: NSPredicate) -> NSPredicate {
         return lhs.and(rhs)
     }
     
@@ -121,14 +121,14 @@ public extension NSPredicate {
     ///   - lhs: NSPredicate.
     ///   - rhs: NSPredicate.
     /// - Returns: NSCompoundPredicate
-    public static func || (lhs: NSPredicate, rhs: NSPredicate) -> NSPredicate {
+    static func || (lhs: NSPredicate, rhs: NSPredicate) -> NSPredicate {
         return lhs.or(rhs)
     }
     
     /// SwifterSwift: Returns a new predicate formed by NOT-ing the predicate.
     /// - Parameters: rhs: NSPredicate to convert.
     /// - Returns: NSCompoundPredicate
-    public static prefix func ! (rhs: NSPredicate) -> NSPredicate {
+    static prefix func ! (rhs: NSPredicate) -> NSPredicate {
         return rhs.not
     }
     
